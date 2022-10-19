@@ -29,7 +29,7 @@ let changdu = 512
 let kuandu = 512
 let msg2
 let timeout = 30000
-let isch = 1
+let isch = 0
 let cd = 0
 let t
 let startTimeMS
