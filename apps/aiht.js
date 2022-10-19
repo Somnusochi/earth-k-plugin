@@ -415,7 +415,7 @@ export class aiht extends plugin {
             console.log('写入文件成功')
           }
         })
-        msg2 = [segment.at(e.user_id), segment.image(ml + '/3.jpg')]
+        msg2 = [segment.at(e.user_id), segment.image(ml + '/3.jpg'), gjc2]
         await sleep(500)
         let msgRes = await e.reply(msg2)
 
@@ -782,7 +782,7 @@ export class aiht extends plugin {
         }
       })
 
-      msg2 = [segment.at(e.user_id), segment.image(ml + '/2.png')]
+      msg2 = [segment.at(e.user_id), segment.image(ml + '/2.png'), res4]
       await sleep(500)
       let msgRes = await e.reply(msg2)
       iscd = 1
@@ -915,7 +915,7 @@ export class aiht extends plugin {
         }
       })
 
-      msg2 = [segment.at(e.user_id), segment.image(ml + '/1.jpg')]
+      msg2 = [segment.at(e.user_id), segment.image(ml + '/1.jpg'), res5]
       await sleep(500)
       let msgRes = await e.reply(msg2)
       iscd = 1
