@@ -862,8 +862,8 @@ export class aiht extends plugin {
 
           {
             "prompt": "masterpiece, best quality," + res5,
-            "width": 512,
-            "height": 768,
+            "width": 1024,
+            "height": 512,
             "scale": 12,
             "sampler": "k_euler_ancestral",
             "steps": 28,
@@ -922,7 +922,7 @@ export class aiht extends plugin {
 
 
       console.log(msgRes.message_id, isch)
-      if (msgRes && msgRes.message_id && isch == 1) {
+      if (msgRes && msgRes.message_id && isch == 1 && e.isGroup) {
         let target = e.group;
         setTimeout(() => {
           target.recallMsg(msgRes.message_id);
