@@ -863,17 +863,17 @@ export class aiht extends plugin {
         body: JSON.stringify(
           //{"input":"masterpiece, best quality, loli","model":"safe-diffusion","parameters":{"width":512,"height":768,"scale":12,"sampler":"k_euler_ancestral","steps":28,"seed":2867080848,"n_samples":1,"ucPreset":0,"uc":"lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"}}
 
-          "parameters": {
-            "prompt": res5,
-            "width": 512,
-            "height": 768,
-            "scale": 12,
-            "sampler": "k_euler_ancestral",
-            "steps": 28,
-            "seed": i,
-            "n_samples": 1,
-            "ucPreset": 0,
-            "uc": "lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"
+          {
+              "prompt": res5,
+              "width": 512,
+              "height": 768,
+              "scale": 12,
+              "sampler": "k_euler_ancestral",
+              "steps": 28,
+              "seed": i,
+              "n_samples": 1,
+              "ucPreset": 0,
+              "uc": "lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"
           })
 
       });
