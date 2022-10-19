@@ -70,7 +70,7 @@ export class aiht extends plugin {
           fnc: 'huatu'
 
         }, {
-          reg: "^#绘个图(.*)$|#土块画图预设(.*)$", //匹配消息正则，命令正则
+          reg: "^#绘个图(.*)$|#画图预设(.*)$", //匹配消息正则，命令正则
           /** 执行方法 */
           fnc: 'huatu2'
 
@@ -630,7 +630,7 @@ export class aiht extends plugin {
       //        return
       //     }
 
-      let url4 = dz
+      let url4 = 'http://192.168.10.2:6969/generate-stream';
       let i2 = Math.floor(Math.random() * 3067080848);
 
       try {
@@ -638,26 +638,23 @@ export class aiht extends plugin {
           method: 'post',
           headers: {
             'Content-Type': 'application/json',
-            'authorization': yh
+            'authorization': 'Bearer'
           },
           body: JSON.stringify(
 
             //{"input":"masterpiece, best quality, loli","model":"safe-diffusion","parameters":{"width":512,"height":768,"scale":12,"sampler":"k_euler_ancestral","steps":28,"seed":2867080848,"n_samples":1,"ucPreset":0,"uc":"lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"}}
 
             {
-              "input": "masterpiece, best quality, " + res4,
-              "model": ss,
-              "parameters": {
-                "width": kuandu,
-                "height": changdu,
-                "scale": 12,
-                "sampler": "k_euler_ancestral",
-                "steps": 28,
-                "seed": i2,
-                "n_samples": 1,
-                "ucPreset": 0,
-                "uc": pc
-              }
+              "prompt": "masterpiece, best quality," + res4,
+              "width": kuandu,
+              "height": changdu,
+              "scale": 12,
+              "sampler": "k_euler_ancestral",
+              "steps": 28,
+              "seed": i2,
+              "n_samples": 1,
+              "ucPreset": 0,
+              "uc": pc
             })
 
         });
@@ -665,7 +662,7 @@ export class aiht extends plugin {
       } catch (err) {
         console.log(err)
         console.log('没有访问成功,尝试换接口');
-        url4 = dz2
+        url4 = 'http://192.168.10.2:6969/generate-stream';
         let i4 = Math.floor(Math.random() * 2);
         if (i4 == 0) {
           changdu = 512
@@ -681,7 +678,7 @@ export class aiht extends plugin {
             method: 'post',
             headers: {
               'Content-Type': 'application/json',
-              'authorization': yh2
+              'authorization': 'Bearer'
             },
             body: JSON.stringify(
 
@@ -729,14 +726,14 @@ export class aiht extends plugin {
       res = await res.text();
 
       if (res == '{"error":"unknown error"}') {
-        url4 = dz2
+        url4 = 'http://192.168.10.2:6969/generate-stream';
 
         try {
           res = await fetch(url4, {
             method: 'post',
             headers: {
               'Content-Type': 'application/json',
-              'authorization': yh2
+              'authorization': 'Bearer'
             },
             body: JSON.stringify(
 
@@ -825,13 +822,13 @@ export class aiht extends plugin {
     let gjc = e.msg.replace(/#画图/g, "").trim()
     console.log(123456789)
 
-    if (kg == 0 & e.isGroup) {
+    if (kg == 0 & e.isGroup | kg == 0 & e.isMaster) {
       console.log(zr)
-      if (zr == 1 & !e.isMaster) {
-        e.reply('对不起，你不可画哦')
-        return
-
-      }
+      // if (zr == 1 & !e.isMaster) {
+      //   e.reply('对不起，你不可画哦')
+      //   return
+      //
+      // }
       kg = 1
 
       let data1 = gjc
@@ -858,7 +855,7 @@ export class aiht extends plugin {
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
-          'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ing0djVwQ3dLZmR3WjdvTVNTTTd0NiIsIm5jIjoibnd5Rm9JR1ZLeldZT1RDd3BDTEVxIiwiaWF0IjoxNjY1NTgxMDc5LCJleHAiOjE2NjgxNzMwNzl9.nUh2SaVAalXuf71yapg6FlXiM2gHUJVH2sfI7JJOxdA'
+          'authorization': 'Bearer'
         },
         body: JSON.stringify(
           //{"input":"masterpiece, best quality, loli","model":"safe-diffusion","parameters":{"width":512,"height":768,"scale":12,"sampler":"k_euler_ancestral","steps":28,"seed":2867080848,"n_samples":1,"ucPreset":0,"uc":"lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"}}
